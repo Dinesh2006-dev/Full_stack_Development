@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="myInput" type="text" value="Default">
+    <input type="submit" value="Submit" onclick="a()">
+    <script>
+        function a() {
+            var inputValue = document.getElementById("myInput").value;
+            alert(inputValue);
+            document.getElementById("myInput").value = "!";
+            document.getElementById("myInput").value = "default";
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<h1>Guessing the Number</h1>
+<input id="inputnumber">
+<button onclick="check()"> check</button>
+<p id="result">Your are right/wrong</p>
+<p id="Score"> score:10</p>
+<script>
+    var guessingnumber=document.getElementById("inputnumber")
+    var result=document.getElementById("result")
+    var score=document.getElementById("Score")
+    var points=10
+    let tag=document.createElement("h1")
+
+    function check(){
+
+        var randomNumber=Math.floor(Math.random()*10)+1
+        console.log(randomNumber)
+        if (points != 0) {
+            if ((guessingnumber.value < 10 === guessingnumber.value > 0 )){
+                if (guessingnumber.value==randomNumber){
+                    result.textContent="Your are Right"
+                    alert("YOU WON...")
+                }
+                else{
+                    result.textContent="Your are Wrong"
+                    points=points-1
+                    score.textContent='score:'+points
+                }
+            }   
+            else{
+                tag.textContent="Enter the number with in 0 to 9"
+                tag.className="fade"
+                document.body.appendChild(tag)
+                setTimeout(()=>{
+                    tag.classList.add("hide");
+                },2000);
+                setTimeout(()=>{
+                    tag.remove();
+                },3000);
+            }
+        }
+        else{
+            alert("Better luck next time")
+        }
+    }
+</script>

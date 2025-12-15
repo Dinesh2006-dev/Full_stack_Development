@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #ffffff; /* Light theme background */
+    color: #000000; /* Light theme text color */
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.dark-theme {
+    background-color: #333333; /* Dark theme background */
+    color: #ffffff; /* Dark theme text color */
+}
+
+.dark-theme button {
+    background-color: #555555; /* Dark button in dark theme */
+    color: #ffffff;
+}
+
+.dark-theme button:hover {
+    background-color: #777777; /* Dark button hover */
+}

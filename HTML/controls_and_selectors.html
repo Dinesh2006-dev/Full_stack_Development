@@ -1,0 +1,182 @@
+<!--
+
+Input Types         	Description
+<input type = "text">	Text input usually used to accept characters from user such as username, password, address.
+<input type = "number">	The input type number used to accept number as input from user.
+<input type = "checkbox">	Checkbox input is shown as a square box, that can be checked or unchecked based on user requirement.
+<input type = "radio">	Radio input defines a radio button for selecting one of the many choices.
+<select>	            Select tag is used to create a dropdown list in a form.
+<input type = "datetime-local">	The input type datetime defines a graphical interface to pick a month.
+<input type = "date">	The input type date defines a graphical interface to pick a date.
+<input type = "month">	The input type month defines a graphical interface to pick a month.
+<input type = "week">	The input type week defines a graphical interface to pick a week.
+<input type = "time">	The input type time defines a graphical interface to pick a time.
+<input type = "range">	The input type range used to define a slider control for entering a number.
+<input type = "email">	The input type email is used to define an input area that accepts email.
+<input type = "url">	The input type url is used to define an input area that accepts url
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Checkbox Control</title>
+</head>
+
+<body>
+   <h1>single line text input controls</h1>
+   <form >
+      First name: 
+      <input type = "text" name = "first_name" />
+      <br><br>
+      Last name: 
+      <input type = "text" name = "last_name" />
+   </form>
+   <br><br>
+   <form>
+      <h1>checkbox</h1>
+      <input type = "checkbox" 
+             name = "maths" 
+             checked> 
+      Maths
+      <input type = "checkbox" 
+             name = "physics" 
+             value = "on"> 
+      Physics  <br><br>
+      <h1>radio button</h1>
+            <input type = "radio" 
+             name = "subject" 
+             value = "maths"> 
+      Maths
+      <input type = "radio" 
+             name = "subject" 
+             value = "physics"> 
+      Physics
+      <br><br>
+      <h1>select box</h1>
+      <select name = "dropleft">
+         <option value = "Maths" >
+            Maths
+         </option>
+         <option value = "Physics">
+            Physics
+         </option>
+         <option value = "Chemistry">
+            Chemistry
+         </option>
+         <option value="english">English</option>
+         <option value="Tamil" selected>Tamil</option>
+      </select>
+      <br><br>
+      <h1>file upload</h1>
+      <input type = "file" 
+             name = "fileupload" 
+             accept = "video/*" />
+      <br><br>
+      <h1>button</h1>
+      <input type = "submit" 
+             name = "submit" 
+             value = "Submit" />
+      <br><br>
+      <input type = "reset" 
+             name = "reset" 
+             value = "Reset" />
+      <br><br>
+      <input type = "button" 
+             name = "ok" 
+             value = "OK" />
+      <br><br>
+      <button>Submit</button>
+      <br><br>
+      <h1>hidden forms</h1>
+      <p>This is page 10</p>
+      <input type = "hidden" 
+             name = "pagename" 
+             value = "10" />
+      <input type = "hidden" 
+             name = "submit" 
+             value = "Submit" />
+      <input type = "reset" 
+             name = "reset" 
+             value = "Reset" />
+      <br><br>
+      <h1>date and time selectors</h1>
+       <form onsubmit="return false;">
+      Date and Time: 
+      <input type="datetime-local" name="newinput" />
+      <input type="submit" value="Submit" />
+   </form>
+   <br><br>
+   <h1>date selectors</h1>
+   <form onsubmit="return false;">
+      Date: 
+      <input type="date" name="newinput" />
+      <input type="submit" value="Submit" />
+   </form>
+   <br><br>
+    <h1>months selectors</h1>
+   <form onsubmit="return false;">
+      Date: 
+      <input type="month" name="newinput" />
+      <input type="submit" value="Submit" />
+   </form>
+   <br>
+      <h1>week selectors</h1>
+   <form onsubmit="return false;">
+      Date: 
+      <input type="week" name="newinput" />
+      <input type="submit" value="Submit" />
+   </form>
+   <br><br>
+    <h1>time selectors</h1>
+   <form onsubmit="return false;">
+      Date: 
+      <input type="time" name="newinput" />
+      <input type="submit" value="Submit" />
+   </form>
+   <br><br>
+   <h1>number selectors</h1>
+      <form onsubmit="return false;">
+      Select Number: 
+      <input type = "number" 
+               min = "0" 
+               max = "10" 
+               step "1"
+               value = "5" 
+               name = "newinput" />
+      <input type = "submit" 
+               value = "submit" />
+   </form>
+   <br><br>
+   <h1>range selectors</h1>
+   <form onsubmit="return false;">
+      Select Range : 
+      <input type = "range" 
+             min = "0" 
+             max = "10" 
+             step "1"
+             value = "5" 
+             name = "newinput" />
+      <input type = "submit" 
+             value = "submit" />
+   </form>
+   <br><br>
+   <h1>email controls</h1>
+   <form onsubmit="return false;">
+      Enter email : 
+      <input type = "email" name = "newinput" />
+      <input type = "submit" value = "submit" />
+   </form>
+   <br><br>
+   <h1>URL control</h1>
+   <h2>Button as a Links</h2>
+
+<p>Click the button to go to the HTML tutorial.</p>
+
+<button onclick="https://web.whatsapp.com/">HTML Tutorial</button>
+<br><br>
+   </form>
+</body>
+
+</html>

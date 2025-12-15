@@ -1,0 +1,22 @@
+//QUERYSELECTOR
+<div class="ok">
+    <h1>dinesh</h1>
+ </div>
+ <script>
+    var div=document.querySelector(".ok")// we can select id,tag also
+    console.log(div.innerHTML)// inner tag should be print console
+ </script>
+ <br>
+ //QUERYSELECTOR ALL
+<h1 class="ok">dinesh</h1>
+ <h1 class="ok">ganesh</h1>
+ <h1 class="ok">jothi</h1>
+
+ <script>
+    var display=document.querySelectorAll(".ok")
+    console.log(display)// the console output is create arry because the class name are same
+    for(i=0;i<display.length;i+=1){
+        console.log(display[i])//its print with only tag 
+        console.log(display[i].textContent)//its print text only
+    }
+</script>

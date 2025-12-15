@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Form</title>
+  <style>
+    h3 {
+      border: solid 2px;
+      padding: 5px;
+      margin-top: 1px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">STUDENT FORM</h1>
+
+    <table border="1" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      <tr>
+        <td>Name</td>
+        <td><input id="nam" type="text"></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input id="ae" type="number"></td> <!-- fixed id -->
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          <input type="radio" name="Gender" value="Male"> Male
+          <input type="radio" name="Gender" value="Female"> Female
+        </td>
+      </tr>
+      <tr>
+        <td>Course</td>
+        <td>
+          <select id="cou">
+            <option value="AIDS">AIDS</option>
+            <option value="AIML">AIML</option>
+            <option value="CSE">CSE</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input id="ema" type="email"></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:center">
+          <input type="submit" onclick="check()" style="width: 100%; height: 30px; background-color:aqua">
+        </td>
+      </tr>
+    </table>
+
+    <br>
+
+    <table id="output" border="1">
+      <tr>
+        <th><h3>Name</h3></th>
+        <th><h3>Age</h3></th>
+        <th><h3>Course</h3></th>
+        <th><h3>Gender</h3></th>
+        <th><h3>Email</h3></th>
+        <th><h3>Action</h3></th>
+      </tr>
+    </table>
+  </center>
+
+  <script>
+    let studentList = [];
+
+    window.onload = function () {
+      const stored = localStorage.getItem("studentList");
+      if (stored) {
+        studentList = JSON.parse(stored);
+        studentList.forEach(stu => add(stu));
+      }
+    };
+
+    function check() {
+      var inputName = document.getElementById("nam").value;
+      var inputAge = document.getElementById("ae").value;
+      var inputCourse = document.getElementById("cou").value;
+      var inputEmail = document.getElementById("ema").value;
+      var inputGender = document.querySelector('input[name="Gender"]:checked')?.value;
+
+      if (!inputName || !inputAge || !inputCourse || !inputGender || !inputEmail) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      const student = {
+        name: inputName,
+        age: inputAge,
+        course: inputCourse,
+        gender: inputGender,
+        email: inputEmail
+      };
+
+      studentList.push(student);
+      localStorage.setItem("studentList", JSON.stringify(studentList));
+      add(student);
+      clearForm();
+    }
+
+    function createCell(text) {
+      const td = document.createElement("td");
+      td.textContent = text;
+      return td;
+    }
+
+    function add(student) {
+      var table = document.getElementById("output");
+      var row = document.createElement("tr");
+
+      row.appendChild(createCell(student.name));
+      row.appendChild(createCell(student.age));
+      row.appendChild(createCell(student.course));
+      row.appendChild(createCell(student.gender));
+      row.appendChild(createCell(student.email));
+
+      var actionTd = document.createElement("td");
+      var delBtn = document.createElement("button");
+      delBtn.textContent = "Delete";
+      delBtn.style.backgroundColor = "red";
+      delBtn.style.color = "white";
+
+      delBtn.onclick = function () {
+        row.remove();
+        studentList = studentList.filter(s =>
+          !(s.name === student.name &&
+            s.age === student.age &&
+            s.course === student.course &&
+            s.gender === student.gender &&
+            s.email === student.email)
+        );
+        localStorage.setItem("studentList", JSON.stringify(studentList));
+      };
+
+      actionTd.appendChild(delBtn);
+      row.appendChild(actionTd);
+      table.appendChild(row);
+    }
+
+    function clearForm() {
+      document.getElementById("nam").value = "";
+      document.getElementById("ae").value = "";
+      document.getElementById("cou").selectedIndex = 0;
+      document.getElementById("ema").value = "";
+      document.querySelectorAll('input[name="Gender"]').forEach(el => el.checked = false);
+    }
+  </script>
+</body>
+</html>

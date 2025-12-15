@@ -1,0 +1,163 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: white;
+      color: #333;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 100px 20px 50px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background-color: lightgreen;
+    }
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 1px solid black;
+    }
+
+    section {
+      margin: 60px 0;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      background-color: lightcyan;
+      padding:30px;
+
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      background-color:lightgoldenrodyellow;
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .project-card button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .project-card button:hover {
+      background: #555;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: beige;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    form button:hover {
+      background: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #ffcc00;
+    }
+
+    @media(max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+    .skills{
+      margin-left: 30px;
+    }
+    #contact{
+      padding: 20px;
+      background-color:lightcyan;
+    }
+    .details{
+      padding: 15px;
+      
+    }
+    #about{
+      background-color:lightcyan;
+      padding: 30px;
+    }
