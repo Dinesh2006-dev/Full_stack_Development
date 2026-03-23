@@ -5,7 +5,7 @@
 body {
     font-family: Karla, sans-serif;
     margin: 0;
-    background-color:black;
+    background-color: black;
     padding: 20px;
     height: 100vh;
     display: flex;
@@ -22,7 +22,7 @@ div#root {
 }
 
 main {
-    background-color:lightcyan;
+    background-color: aqua;
     height: 100%;
     border-radius: 5px;
     display: flex;
@@ -68,10 +68,12 @@ button {
 
 button.roll-dice {
     height: 50px;
-    width: 100px;
+    white-space: nowrap;
+    width: auto;
+    padding: 6px 21px;
     border: none;
     border-radius: 6px;
-    background-color: #5035FF;
+    background-color: brown;
     color: white;
     font-size: 1.2rem;
 }
